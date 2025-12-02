@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  padding: 20px 50px 0 50px;
+  position: relative;
+  min-height: 100vh;
+
+  /* ADICIONE ESTAS 3 LINHAS PARA O FUNDO: */
+  background-image: url("img/fundo.jpg");
+  background-size: cover; /* Faz a imagem cobrir tudo */
+  background-position: center; /* Centraliza a imagem */
+}
+
+.caixa-conteudo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  /* MUDAR DE: justify-content: space-between; */
+  /* PARA: (Isso ajuda a afastar os dois blocos) */
+  justify-content: space-between;
+  gap: 40px; /* Garante um espaço mínimo entre o texto e o copo */
+}
+
+.caixa-textos {
+  /* REMOVER: width: 600px; */
+  /* ADICIONAR: flex: 1 para ocupar o espaço disponível e um limite máximo */
+  flex: 1;
+  max-width: 600px; /* Não deixa ficar largo demais em telas gigantes */
+}
+
+h2 {
+  color: #fff; /* VOLTAR PARA BRANCO */
+  font-weight: 600;
+  font-size: 60px;
+  line-height: 1.2;
+}
+
+.texto-starbucks {
+  color: #017143;
+  font-weight: 900;
+  font-size: 70px;
+}
+
+.paragrafo {
+  font-size: 16px;
+  color: #fff; /* VOLTAR PARA BRANCO */
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #017143;
+  color: #fff;
+  padding: 15px 30px; /* Botão um pouco maior */
+  border: none;
+  cursor: pointer;
+  border-radius: 40px;
+  transition: 0.5s;
+  font-weight: 500;
+}
+
+button:hover {
+  background-color: #00b368;
+}
+
+.logo {
+  width: 80px;
+}
+
+.caixa-imagem {
+  /* REMOVER: width: 600px; */
+  /* ADICIONAR: flex: 1 para ocupar o espaço e manter o alinhamento */
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 50px;
+  z-index: 2;
+  position: relative;
+}
+
+.imagem-copo {
+  width: 340px;
+  /* Adicionei um drop-shadow leve para destacar o copo do fundo */
+  filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.2));
+  animation: flutuar 2s ease-in-out forwards;
+}
+
+/* --- AQUI ESTÁ A CORREÇÃO DOS COPINHOS --- */
+.caixa-menu {
+  position: absolute; /* Fixa na tela */
+  bottom: 20px; /* Cola no rodapé */
+  left: 0;
+  width: 100%; /* Ocupa a largura toda para centralizar */
+  display: flex;
+  justify-content: center;
+  z-index: 10; /* Garante que fique EM CIMA do verde */
+}
+
+.botao-menu {
+  width: 60px; /* Um pouco menor para ficar elegante */
+  cursor: pointer;
+  margin: 0 10px;
+  transition: 0.3s;
+}
+
+.botao-menu:hover {
+  transform: translateY(-10px); /* Efeito visual ao passar o mouse */
+}
+
+.circulo {
+  background-color: #017143;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* Ajustei o clip-path para parecer mais com a imagem de referência */
+  clip-path: circle(600px at right bottom);
+  z-index: -1; /* Fica atrás de tudo */
+}
+
+.circulo {
+  /* ... mantenha as outras propriedades que já estão lá ... */
+
+  /* Adicione essa linha para criar a animação suave: */
+  transition: background-color 1s ease;
+}
+
+@keyframes flutuar {
+  from {
+    opacity: 0; /* Começa invisível */
+    transform: translateX(50px); /* Começa um pouco para a direita */
+  }
+  to {
+    opacity: 1; /* Fica visível */
+    transform: translateX(0); /* Volta para o lugar original */
+  }
+}
